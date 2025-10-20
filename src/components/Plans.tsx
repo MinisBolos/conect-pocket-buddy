@@ -145,7 +145,13 @@ const Plans = () => {
                   className="w-full" 
                   variant={plan.highlighted ? "hero" : "default"}
                   size="lg"
-                  onClick={() => window.open(PAYMENT_URL, '_blank')}
+                  onClick={() => {
+                    if (plan.name === "6GB") {
+                      window.open(PAYMENT_URL, '_blank');
+                    } else {
+                      window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank');
+                    }
+                  }}
                 >
                   Contratar
                 </Button>
