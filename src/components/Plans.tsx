@@ -4,45 +4,93 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Básico",
-    price: "R$ 79,90",
-    description: "Perfeito para uso pessoal",
+    name: "6GB",
+    price: "R$ 69,90",
+    data: "6GB",
     features: [
-      "Internet Ilimitada",
-      "Velocidade até 10 Mbps",
-      "1 Dispositivo conectado",
-      "Suporte por email",
+      "6GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte via WhatsApp",
     ],
     highlighted: false,
   },
   {
-    name: "Premium",
-    price: "R$ 129,90",
-    description: "Ideal para profissionais",
+    name: "15GB",
+    price: "R$ 84,90",
+    data: "15GB",
     features: [
-      "Internet Ilimitada",
-      "Velocidade até 50 Mbps",
-      "Até 5 Dispositivos",
-      "Suporte prioritário 24/7",
-      "Wi-Fi 5G",
+      "15GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte via WhatsApp",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "20GB",
+    price: "R$ 99,99",
+    data: "20GB",
+    features: [
+      "20GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte prioritário",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "30GB",
+    price: "R$ 114,99",
+    data: "30GB",
+    features: [
+      "30GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte prioritário",
     ],
     highlighted: true,
   },
   {
-    name: "Empresarial",
-    price: "R$ 199,90",
-    description: "Para pequenas empresas",
+    name: "40GB",
+    price: "R$ 129,99",
+    data: "40GB",
     features: [
-      "Internet Ilimitada",
-      "Velocidade até 100 Mbps",
-      "Até 10 Dispositivos",
-      "Suporte dedicado 24/7",
-      "Wi-Fi 5G",
-      "IP Fixo",
+      "40GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte prioritário",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "50GB",
+    price: "R$ 144,99",
+    data: "50GB",
+    features: [
+      "50GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte prioritário",
+    ],
+    highlighted: false,
+  },
+  {
+    name: "100GB",
+    price: "R$ 159,99",
+    data: "100GB",
+    features: [
+      "100GB de Internet",
+      "MDM Incluído",
+      "Conexão Portátil",
+      "Suporte VIP 24/7",
     ],
     highlighted: false,
   },
 ];
+
+const PAYMENT_URL = "https://www.asaas.com/c/px999ktfxzpb6u55";
+const WHATSAPP_NUMBER = "5521971550633";
 
 const Plans = () => {
   return (
@@ -57,7 +105,7 @@ const Plans = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index}
@@ -75,7 +123,6 @@ const Plans = () => {
               
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl mb-2">{plan.name}</CardTitle>
-                <CardDescription>{plan.description}</CardDescription>
                 <div className="mt-4">
                   <span className="text-4xl font-bold">{plan.price}</span>
                   <span className="text-muted-foreground">/mês</span>
@@ -93,14 +140,26 @@ const Plans = () => {
                 </ul>
               </CardContent>
 
-              <CardFooter>
+              <CardFooter className="flex-col gap-2">
                 <Button 
                   className="w-full" 
                   variant={plan.highlighted ? "hero" : "default"}
                   size="lg"
+                  onClick={() => window.open(PAYMENT_URL, '_blank')}
                 >
                   Contratar
                 </Button>
+                <p className="text-xs text-muted-foreground text-center">
+                  Após assinatura, entre em contato via{" "}
+                  <a 
+                    href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    WhatsApp
+                  </a>
+                </p>
               </CardFooter>
             </Card>
           ))}
