@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Wifi } from "lucide-react";
 import heroImage from "@/assets/hero-wifi.jpg";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
@@ -20,13 +21,17 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 px-4 py-20 text-center">
         <div className="mx-auto max-w-4xl">
+          <div className="mb-8 flex justify-center">
+            <img src={logo} alt="Conect Wi-fi De Bolso" className="h-32 md:h-40 w-auto" />
+          </div>
+          
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-background/10 backdrop-blur-sm px-6 py-2 border border-background/20">
             <Wifi className="h-5 w-5 text-primary-foreground animate-pulse-glow" />
             <span className="text-sm font-medium text-primary-foreground">Internet Portátil Ilimitada</span>
           </div>
           
           <h1 className="mb-6 text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
-            Conect Wi-fi<br />De Bolso
+            Conectividade sem limites
           </h1>
           
           <p className="mb-8 text-xl md:text-2xl text-primary-foreground/90 max-w-2xl mx-auto">

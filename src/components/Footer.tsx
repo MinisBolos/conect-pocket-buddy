@@ -1,4 +1,5 @@
-import { Wifi, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -6,10 +7,7 @@ const Footer = () => {
       <div className="container px-4 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Wifi className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">Conect Wi-fi</span>
-            </div>
+            <img src={logo} alt="Conect Wi-fi De Bolso" className="h-16 w-auto mb-4" />
             <p className="text-muted-foreground">
               Internet portátil ilimitada para você estar conectado onde estiver.
             </p>
