@@ -1,0 +1,22 @@
+{
+  "name": "Conecta Wi-Fi De Bolso",
+  "short_name": "Conecta",
+  "description": "Wi-Fi portátil",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=192&q=80",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=512&q=80",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
